@@ -1,6 +1,6 @@
 path=$(pwd)
 
-rm -rf ~/.oh-my-zsh
+# rm -rf ~/.oh-my-zsh
 rm ~/.zshrc
 rm ~/.tmux.conf
 rm ~/.tmux.conf.local
