@@ -110,6 +110,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+$(cd)
 path=$(pwd)
 
 source $path/config/zsh/prompt_256.sh
