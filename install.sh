@@ -10,5 +10,3 @@ ln -s $path/zsh/.zsh ~/.zsh
 ln -s $path/zsh/.oh-my-zsh ~/.oh-my-zsh
 ln -s $path/tmux/.tmux.conf ~/.tmux.conf
 ln -s $path/tmux/.tmux.conf.local ~/.tmux.conf.local
-
-source ~/.zshrc
