@@ -113,18 +113,4 @@ source $ZSH/oh-my-zsh.sh
 
 source /home/u21s052015/config/zsh/prompt_256.sh
 source /home/u21s052015/config/zsh/prompt_fish.sh
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/u21s052015/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/u21s052015/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/u21s052015/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/u21s052015/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
