@@ -110,7 +110,8 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+path=$(pwd)
 
-source /home/u21s052015/config/zsh/prompt_256.sh
-source /home/u21s052015/config/zsh/prompt_fish.sh
+source $path/config/zsh/prompt_256.sh
+source $path/config/zsh/prompt_fish.sh
 
