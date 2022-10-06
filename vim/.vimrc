@@ -6,44 +6,16 @@
 " call minpac#init()
 
 call plug#begin('~/.vim/plugged')
-"Plug 'nvim-lua/plenary.nvim'
-"Plug 'nvim-telescope/telescope.nvim'
 Plug 'airblade/vim-gitgutter'
-Plug 'dense-analysis/ale'
 Plug 'easymotion/vim-easymotion' " 高亮查找
 Plug 'frazrepo/vim-rainbow' "彩虹括号,启用 :RainbowLoad 
-"Plug 'ghifarit53/tokyonight-vim' " 主题 
-Plug 'iamcco/markdown-preview.nvim', {'do':{->mkdp#util#install()}, 'for':['markdown','vim-plug']} "MarkDown预览
 Plug 'jiangmiao/auto-pairs' "括号成双
 Plug 'junegunn/fzf', {'do': {-> fzf#install()}} " 模糊匹配 :Files
 Plug 'junegunn/fzf.vim'
-"Plug 'kristijanhusak/defx-icons' " 文件图标
 Plug 'ludovicchabant/vim-gutentags'
-"Plug 'mattn/calendar-vim' "日历
-"Plug 'majutsushi/tagbar' " 相当于大纲
-" Plug 'mbbill/desertEx' " 主题
-"Plug 'mbbill/undotree' " 撤销树, 在使用其他编辑器之前先用vim打开并保存该文件,修改完之后再用vim :e打开该文件并保存
-"Plug 'mg979/vim-visual-multi' "光标同时操作多个位置
-Plug 'mhinz/vim-startify' " 启动界面
-" Plug 'morhetz/gruvbox' " 主题
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-"Plug 'preservim/nerdcommenter' " 注释/取消多行注释
-Plug 'preservim/nerdtree'
-"Plug 'ryanoasis/vim-devicons' " 文件图标
-Plug 'qpkorr/vim-renamer'
 Plug 'skywind3000/asyncrun.vim' " 在构建的时候可以做其他的事情
-Plug 'tpope/vim-eunuch' " 解决改名或移动之后撤销历史对不上的问题
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-repeat' " 重复下边自定义的组合命令
-Plug 'tpope/vim-surround' " 实现一些组合命令
-Plug 'ycm-core/YouCompleteMe'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/LargeFile' "加速日志的打开
 Plug 'wsdjeg/vim-todo' "fixme, idea, quextion, todo
-Plug 'yegappan/mru'
-Plug 'Yggdroot/indentLine'
-Plug 'Yggdroot/LeaderF', {'do':'./install.sh'}
 call plug#end()
 
 " 最上边与最下边保留的行数
@@ -84,10 +56,6 @@ nnoremap ;qq :q!<CR>
 nnoremap <Leader>g  :NERDTreeToggle<CR>
 " nnoremap <Leader>f  :NERDTreeFind<CR>
 nnoremap <Leader>f :Files<CR>
-
-" 开关Tagbar插件的键映射
-nnoremap <Leader>t      :TagbarToggle<CR>
-inoremap <Leader>t <C-O>:TagbarToggle<CR>
 
 " vim多窗口快捷键前缀
 nnoremap <Leader><Tab> <C-W>w
@@ -160,9 +128,9 @@ if !has('patch-8.0.210')
 endif
 
 " cinoptions精调c, :0 switch下面的case不额外缩进, g0 作用域声明不额外缩进, (0, w1 没结束的圆括号里的内容折行时不额外缩进
-au FileType c,cpp,objc  setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4 cinoptions=:0,g0,(0,w1
-au FileType json        setlocal expandtab shiftwidth=2 softtabstop=2
-au FileType vim         setlocal expandtab shiftwidth=2 softtabstop=2
+" au FileType c,cpp,objc  setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4 cinoptions=:0,g0,(0,w1
+" au FileType json        setlocal expandtab shiftwidth=2 softtabstop=2
+" au FileType vim         setlocal expandtab shiftwidth=2 softtabstop=2
 
 
 " 和 asyncrun 一起用的异步 make 命令
@@ -173,17 +141,6 @@ command! -bang -nargs=* -complete=file Make AsyncRun -program=make @ <args>
 let g:asyncrun_open = 10
 
 
-"C/C++  映射按键来快速启停构建
-nnoremap <F5>  :if g:asyncrun_status != 'running'<bar>
-                 \if &modifiable<bar>
-                   \update<bar>
-                 \endif<bar>
-                 \exec 'Make'<bar>
-               \else<bar>
-                 \AsyncStop<bar>
-               \endif<CR>
-
-set termguicolors
 
 "let g:tokyonight_style = 'night' " available: night, storm
 "let g:tokyonight_enable_italic = 1
@@ -240,6 +197,6 @@ if !isdirectory(s:vim_tags)
 endif
 
 " 配置 ctags 的参数 "
-let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
-let g:gutentags_ctags_extra_args += ['--c++-kinds=+pxI']
-let g:gutentags_ctags_extra_args += ['--c-kinds=+px']
+" let g:gutentags_ctags_extra_args = ['--fields=+niazS', '--extra=+q']
+" let g:gutentags_ctags_extra_args += ['--c++-kinds=+pxI']
+" let g:gutentags_ctags_extra_args += ['--c-kinds=+px']

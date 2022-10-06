@@ -1,6 +1,17 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+LD_LIBRARY_PATH=/home/ljj/intel/oneapi/ippcp/2021.6.0/lib/intel64
+LIBRARY_PATH=/home/ljj/intel/oneapi/ippcp/2021.6.0/lib/intel64
+IPPCRYPTOROOT=/home/ljj/intel/oneapi/ippcp/2021.6.0
+PKG_CONFIG_PATH=/home/ljj/intel/oneapi/ippcp/2021.6.0/lib/pkgconfig
+CPATH=/home/ljj/intel/oneapi/ippcp/2021.6.0/include
+
+export LD_LIBRARY_PATH
+export LIBRARY_PATH
+export IPPCRYPTOROOT
+export PKG_CONFIG_PATH
+export CPATH
 export TERM="xterm-256color"
 
 alias proxy="export http_proxy=http://127.0.0.1:7890; export https_proxy=http://127.0.0.1:7890"
@@ -111,8 +122,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-path=$(pwd)
-
-source $path/zsh/prompt_256.sh
-source $path/zsh/prompt_fish.sh
+source /home/ljj/config/zsh/prompt_256.sh
+source /home/ljj/config/zsh/prompt_fish.sh
 
