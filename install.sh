@@ -1,5 +1,8 @@
 path=$(pwd)
 
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 rm ~/.zshrc
 rm ~/.tmux.conf
 rm ~/.tmux.conf.local
@@ -7,6 +10,9 @@ rm ~/.tmux.conf.local
 ln -s $path/zsh/.zshrc ~/.zshrc
 ln -s $path/tmux/.tmux.conf ~/.tmux.conf
 ln -s $path/tmux/.tmux.conf.local ~/.tmux.conf.local
+ln -s $path/vim/.vimrc ~/.vimrc
+
+source ~/.vimrc
 
 # sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
